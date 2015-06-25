@@ -116,11 +116,12 @@
  */
 #define __pure			__attribute__((pure))
 #define __aligned(x)			__attribute__((aligned(x)))
-#define __printf(a, b)		__attribute__((format(printf, a, b)))
-#define __scanf(a, b)		__attribute__((format(scanf, a, b)))
-#define __attribute_const__	__attribute__((__const__))
-#define __maybe_unused		__attribute__((unused))
-#define __always_unused		__attribute__((unused))
+#define __printf(a, b)			__attribute__((format(printf, a, b)))
+#define __scanf(a, b)			__attribute__((format(scanf, a, b)))
+#define  noinline			__attribute__((noinline))
+#define __attribute_const__		__attribute__((__const__))
+#define __maybe_unused			__attribute__((unused))
+#define __always_unused			__attribute__((unused))
 
 /* gcc version specific checks */
 
@@ -209,10 +210,10 @@
  * variables which are referenced only from assembly code.  __visible tells the
  * optimizer that something else uses this function or variable, thus preventing
  * this.
+ * Tell the optimizer that something else uses this function or variable.
  */
 #define __visible	__attribute__((externally_visible))
 #endif
-
 
 #if GCC_VERSION >= 40900 && !defined(__CHECKER__)
 /*
