@@ -848,6 +848,7 @@ static struct n_hdlc *n_hdlc_alloc(void)
 	spin_lock_init(&n_hdlc->tx_free_buf_list.spinlock);
 	spin_lock_init(&n_hdlc->rx_buf_list.spinlock);
 	spin_lock_init(&n_hdlc->tx_buf_list.spinlock);
+
 	INIT_LIST_HEAD(&n_hdlc->rx_free_buf_list.list);
 	INIT_LIST_HEAD(&n_hdlc->tx_free_buf_list.list);
 	INIT_LIST_HEAD(&n_hdlc->rx_buf_list.list);
